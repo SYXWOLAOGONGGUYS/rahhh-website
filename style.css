@@ -1,5 +1,6 @@
 body{background-color:#a9e5fc;
-     text-align:center}
+     display: flex;
+     justify-content}
 h1{color:#2cbcf5}
 h2{color:#5fcefa}
 button{background-color:#96defa;
