@@ -7,23 +7,22 @@
 <link rel="stylesheet" href="style2a.css">
 
   <title>Number-guessing</title>
-  <br>
 </head>
 
 <body>
   <h1>Guess the number!</h1>
   <button onclick="startgame()">Start</button>
   <div id="gameFeedback"></div>
-  <input type="text" id="userGuess" placeholder="                " />
+  <input type="text" id="userGuess" placeholder="Enter guess here" />
   <button id="submitGuess" onclick="submitGuess()">Submit Guess</button>
   <div id="score"></div>
   <div id="history">
     <h3>Guess History</h3>
     <ul id="guessHistoryList"></ul>
   </div>
-  <button>
-    <a href="page2.html">Go back to Homepage</a>
-  </button>
-  <script src="script1.js"></script>
+  <a href="page2.html" style="text-decoration:none;">
+    <button>Go back to Homepage</button>
+  </a>
+  
 </body>
 </html>
