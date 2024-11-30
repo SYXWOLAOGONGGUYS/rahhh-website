@@ -1,29 +1,36 @@
-from random import randint
-def guess_game():
-    number = randint(1,500)
-    attempts = 0
-    print("哟西welcome to the gaaaameeeee")
-    while True:
-        try:
-            guess = int(input("guess a number between 1 and 500:"))
-        except ValueError:
-            print("BAHH ENTER A VALID NUMBERRR")
-            continue
-        attempts += 1
-        
-        if guess < number:
-            print("NAww it's bigger than that")
-            
-        elif guess > number:
-            print("Awman too big")
-            
-        else:
-            print(f"Congrats!! You got it :)) Now here's a banana for you 🍌🍌\n\nYou guessed the number in {attempts} attempts.")
-            break
-    play_again = input("wanna play again?(y/y)🥺🥺:").lower()
-    if play_again == "y":
-        guess_game()
-    else:
-        print("URGH BYE")
-        
-guess_game()
+function guessGame() {
+  const number = Math.floor(Math.random() * 500) + 1;
+  let attempts = 0;
+  
+  console.log("哟西 welcome to the gaaaameeeee");
+  
+  while (true) {
+    const guess = prompt("Guess a number between 1 and 500:");
+    
+    if (isNaN(guess)) {
+      console.log("BAHH ENTER A VALID NUMBERRR");
+      continue;
+    }
+
+    const guessedNumber = parseInt(guess, 10);
+    attempts++;
+
+    if (guessedNumber < number) {
+      console.log("NAww it's bigger than that");
+    } else if (guessedNumber > number) {
+      console.log("Awman too big");
+    } else {
+      console.log(`Congrats!! You got it :)) Now here's a banana for you 🍌🍌\n\nYou guessed the number in ${attempts} attempts.`);
+      break;
+    }
+  }
+
+  const playAgain = prompt("Wanna play again? (y/n) 🥺🥺:").toLowerCase();
+  if (playAgain === "y") {
+    guessGame();
+  } else {
+    console.log("URGH BYE 😤");
+  }
+}
+
+guessGame();
