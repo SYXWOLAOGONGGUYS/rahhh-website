@@ -28,6 +28,10 @@ function guessGame() {
       gameFeedback.innerHTML = `Congrats!! You got it :)) Now here's a banana for you 🍌🍌<br>You guessed the number in ${attempts} attempts.`;
       score.innerHTML = `Total attempts: ${attempts}`;
       submitButton.disabled = true;
+      gameFeedback.innerHTML = feedbackMessage;
+      const historyItem = document.createElement('li');
+    historyItem.innerHTML = `You guessed: ${guess} - ${feedbackMessage}`;
+    guessHistoryList.appendChild(historyItem);
 
       const playAgain = prompt("Wanna play again? (y/y) 🥺🥺:");
       if (playAgain.toLowerCase() === "y") {
