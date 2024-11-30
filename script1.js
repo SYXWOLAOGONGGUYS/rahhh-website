@@ -1,36 +1,42 @@
 function guessGame() {
-  const number = Math.floor(Math.random() * 500) + 1;
+  const number = Math.floor(Math.random() * 500) + 1; // Random number between 1 and 500
   let attempts = 0;
-  
-  console.log("哟西 welcome to the gaaaameeeee");
-  
-  while (true) {
-    const guess = prompt("Guess a number between 1 and 500:");
-    
-    if (isNaN(guess)) {
-      console.log("BAHH ENTER A VALID NUMBERRR");
-      continue;
+
+  const gameFeedback = document.getElementById('gameFeedback');
+  const score = document.getElementById('score');
+  const userGuessInput = document.getElementById('userGuess');
+  const submitButton = document.getElementById('submitGuess');
+
+  gameFeedback.innerHTML = "Guess a number between 1 and 500:";
+
+  submitButton.addEventListener("click", () => {
+    const guess = userGuessInput.value;
+
+    if (isNaN(guess) || guess === "") {
+      gameFeedback.innerHTML = "BAHH ENTER A VALID NUMBERRR";
+      return;
     }
 
     const guessedNumber = parseInt(guess, 10);
     attempts++;
 
     if (guessedNumber < number) {
-      console.log("NAww it's bigger than that");
+      gameFeedback.innerHTML = "NAww it's bigger than that";
     } else if (guessedNumber > number) {
-      console.log("Awman too big");
+      gameFeedback.innerHTML = "Awman too big";
     } else {
-      console.log(`Congrats!! You got it :)) Now here's a banana for you 🍌🍌\n\nYou guessed the number in ${attempts} attempts.`);
-      break;
-    }
-  }
+      gameFeedback.innerHTML = `Congrats!! You got it :)) Now here's a banana for you 🍌🍌<br>You guessed the number in ${attempts} attempts.`;
+      score.innerHTML = `Total attempts: ${attempts}`;
+      submitButton.disabled = true;
 
-  const playAgain = prompt("Wanna play again? (y/n) 🥺🥺:").toLowerCase();
-  if (playAgain === "y") {
-    guessGame();
-  } else {
-    console.log("URGH BYE 😤");
-  }
+      const playAgain = prompt("Wanna play again? (y/y) 🥺🥺:");
+      if (playAgain.toLowerCase() === "y") {
+        guessGame();
+      } else {
+        gameFeedback.innerHTML = "URGH BYE";
+      }
+    }
+  });
 }
 
 guessGame();
