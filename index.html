@@ -1,20 +1,25 @@
-<link rel="stylesheet" href="style.css">
 <!DOCTYPE HTML>
-<html lang = "en">
+<html lang="en">
   <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-stress!</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
       <h1>Hi guys welcome to...D-stressing!</h1>
       <br>
     </header>
-    <text>
+    <main>
       <h2>Here's a button for you:</h2>
       <br>
-      <button type="button" onclick=myFunction()>CLICK MEEEEEE
-        <a href="page2.html" style="text-decoration: none;color:inherit;">
-        </a>
-      </button>
+      <button type="button" onclick="myFunction()">CLICK MEEEEEE</button>
+    </main>
+    <script>
+      function myFunction() {
+        window.location.href = "page2.html";
+      }
+    </script>
+  </body>
+</html>
