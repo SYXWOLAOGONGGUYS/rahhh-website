@@ -1,0 +1,19 @@
+h1{font-size:100px;
+   color:#02aef2}
+p{color:#02aef2}
+body{text-align:center;
+     background-color:#a9e5fc;
+     font-size:40px;
+     justify-content:center;
+     align-items:center}
+button{background-color:#82d8fa;
+       color:#005678;
+       border-radius:30px;
+       height:75px;
+       width:250px;
+       text-align:center;
+       margin-right:50px;
+       font-size:25px}
+h3{display:inline;
+  text-align: center;
+  color:#037bab}
