@@ -1,5 +1,5 @@
 function guessGame() {
-  const number = Math.floor(Math.random() * 500) + 1; // Random number between 1 and 500
+  const number = Math.floor(Math.random() * 500) + 1;
   let attempts = 0;
 
   const gameFeedback = document.getElementById('gameFeedback');
@@ -21,7 +21,7 @@ function guessGame() {
     const guessedNumber = parseInt(guess, 10);
     attempts++;
     
-let feedbackMessage = ' ';
+let feedbackMessage = "";
     if (guessedNumber < number) {
       feedbackMessage = "NAww it's bigger than that";
     } else if (guessedNumber > number) {
@@ -29,7 +29,8 @@ let feedbackMessage = ' ';
     } else {
       feedbackMessage = `Congrats!! You got it :)) Now here's a banana for you 🍌🍌<br>You guessed the number in ${attempts} attempts.`;
       score.innerHTML = `Total attempts: ${attempts}`;
-      submitButton.disabled = true;
+      submitButton.disabled = true;}
+    
       gameFeedback.innerHTML = feedbackMessage;
       const historyItem = document.createElement('li');
     historyItem.innerHTML = `You guessed: ${guess} - ${feedbackMessage}`;
@@ -43,7 +44,15 @@ let feedbackMessage = ' ';
         gameFeedback.innerHTML = "URGH BYE";
       }
     }
-  });
+  };
+
+function resetGame(){
+  userGuessInput.value = "";
+  guessHistoryList.innerHTML = "";
+  score.innerHTML = "";
+  submitButton.disable = false;
+guessGame();
+}
 }
 
 guessGame();
