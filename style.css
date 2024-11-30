@@ -1,6 +1,7 @@
 body{background-color:#a9e5fc;
      display: flex;
-     justify-content}
+     justify-content:center;
+     align-items:center;}
 h1{color:#2cbcf5}
 h2{color:#5fcefa}
 button{background-color:#96defa;
